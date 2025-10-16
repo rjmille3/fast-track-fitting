@@ -1,0 +1,47 @@
+To build the environment run:
+
+conda create -n fast_track_fitting python=3.7.12
+
+conda activate fast_track_fitting
+
+conda install -y -c conda-forge cudatoolkit=11.2 cudnn=8.1
+
+conda install -y numpy=1.21.6
+
+pip install tensorflow-gpu==2.10.1
+
+conda install -y scikit-learn=1.0.2 --no-update-deps
+
+conda install -y matplotlib=3.5.3 --no-update-deps
+
+conda install -y -c conda-forge tqdm=4.67.1 --no-update-deps
+
+export LD_LIBRARY_PATH="$CONDA_PREFIX/lib:${LD_LIBRARY_PATH:-}"
+
+To create the datasets run:
+
+shell_scripts/generate_helical_data.sh
+
+or
+
+shell_scripts/generate_nonhelical_data.sh
+
+The datasets can be split using shell_scripts/split_data.sh
+
+The datasets can be processed into .npz files using shell_scripts/preprocess_data.sh
+
+Make sure to use train/val/test files which have been converted to .npz before training
+
+To train the models run:
+
+shell_scripts/train_models.sh
+
+To run least-squares fits:
+
+For realistic LS fit use shell_scripts/run_realistic_ls_fit.sh
+
+For idealized LS fit use shell_scripts/run_idealized_ls_fit_gaussian.sh or shell_scripts/run_idealized_ls_fit_skewed.sh
+
+To evalaute NN and LS models, use:
+
+shell_scripts/eval.sh
