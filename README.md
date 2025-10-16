@@ -1,6 +1,6 @@
 # Fast-Track Fitting
 
-End-to-end pipeline for generating datasets, preprocessing, training neural models, and running least-squares (LS) fits for helical and non-helical tracks.
+End-to-end pipeline for generating datasets, preprocessing, training models, and running least-squares (LS) fits for helical and non-helical tracks.
 
 ---
 
@@ -56,6 +56,8 @@ Convert the splits to compressed `.npz` files:
 ---
 
 ## 5) Train Models
+
+This script requires the training and validation data to be in `.npz` format.
 
     shell_scripts/train_models.sh
 
