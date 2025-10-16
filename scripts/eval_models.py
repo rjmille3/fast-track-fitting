@@ -100,27 +100,27 @@ def main():
     parser = argparse.ArgumentParser(description="Evaluate NN ensemble vs LS (realistic/idealized).")
     parser.add_argument(
         "--model-dir",
-        default="/baldig/chemistry2/ryan/physics_temp/fast-track-fitting/models/gaussian/models",
+        default="",
         help="Root directory containing param_* subdirectories with *.h5 models."
     )
     parser.add_argument(
         "--train-path",
-        default="/baldig/chemistry2/ryan/physics_temp/fast-track-fitting/data/helical/gaussian/raw/train.txt",
+        default="",
         help="Path to raw training data text file."
     )
     parser.add_argument(
         "--ls-realistic-path",
-        default="/baldig/chemistry2/ryan/physics_temp/fast-track-fitting/data/helical/gaussian/ls/realistic/origv2/100000.txt",
+        default="",
         help="Path to LS realistic results text file."
     )
     parser.add_argument(
         "--ls-idealized-path",
-        default="/baldig/chemistry2/ryan/physics_temp/fast-track-fitting/data/helical/gaussian/ls/idealized/final/100000.txt",
+        default="",
         help="Path to LS idealized results text file."
     )
     parser.add_argument(
         "--x-test-path",
-        default="/baldig/chemistry2/ryan/physics_temp/fast-track-fitting/data/helical/gaussian/ls/realistic/origv2/X_vals.txt",
+        default="",
         help="Path to X_test values used for LS comparisons."
     )
     args = parser.parse_args()
